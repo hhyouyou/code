@@ -1,5 +1,7 @@
 package com.example.code.effective.article24;
 
+import org.omg.CORBA.INTERNAL;
+
 /**
  * @author dong jing xi
  * @date 2020/5/14 22:56
@@ -53,10 +55,13 @@ public class OuterClass {
         }
     }
 
+    int test1 = 1;
+
     /**
      * 局部内部类、局部类
      */
     public void test() {
+        int test = 1;
         /**
          * 1. 无法使用 public private protected修饰
          * 2. 局部类对外完全隐藏，除了创建这个类的方法可以访问它其他的地方是不允许访问的
@@ -69,6 +74,9 @@ public class OuterClass {
                 System.out.println(privateField);
                 System.out.println(privateStaticField);
                 System.out.println(publicField);
+                System.out.println(test);
+                // 局部类只能引用final，不可变的成员变量
+                // test++;
             }
         }
 
